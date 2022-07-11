@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tarea2.View.SignaturesList">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Image x:Name="imageSig"></Image>
+        <ListView x:Name="listSignatures" ItemSelected="listSignatures_ItemSelected" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding code}" Grid.Row="0" Grid.Column="0" TextColor="Black"></Label>
+                            <Label x:Name="txtName" Text="{Binding name}" Grid.Row="1" Grid.Column="1" TextColor="Black" Padding="10"></Label>
+                            <Label Text="{Binding description}" Grid.Row="0" Grid.Column="2" TextColor="Black"></Label>
+                            <Label x:Name="imageCodeText" Text="{Binding imageCode}" Grid.Row="3" Grid.Column="0" TextColor="Black" IsVisible="false"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
